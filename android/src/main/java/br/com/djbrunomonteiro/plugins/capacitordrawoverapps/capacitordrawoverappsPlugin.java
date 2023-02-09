@@ -1,17 +1,26 @@
 package br.com.djbrunomonteiro.plugins.capacitordrawoverapps;
 
+import android.Manifest;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-@CapacitorPlugin(name = "capacitordrawoverapps")
+@NativePlugin(
+        requestCodes={ContactsPlugin.SYSTEM_ALERT_WINDOW}
+)
 public class capacitordrawoverappsPlugin extends Plugin {
 
     private capacitordrawoverapps implementation = new capacitordrawoverapps();
 
     @PluginMethod
+
+    public void show(PluginCall call){
+        
+    }
+
+
     public void echo(PluginCall call) {
         String value = call.getString("value");
 
